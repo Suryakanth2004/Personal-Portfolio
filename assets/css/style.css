@@ -2378,3 +2378,30 @@ body:not(.dark-mode) .moon-icon {
     width: 100%;
     border-radius: 20px; /* Keep consistent rounding */
 }
+
+
+/* --- Contact Form Submit Button Visibility Fix --- */
+
+/* Target the submit button specifically */
+.section-nine form .download-btn .aryaBtn {
+    background-color: transparent; /* Ensure transparent background when idle */
+    color: var(--btn-border);       /* Use the theme's border/main text color (white in dark mode) */
+    border: 2px solid var(--btn-border); /* Ensure border is visible */
+    /* Re-apply radius if needed, overriding potential conflicts */
+    border-radius: 20px;
+}
+
+/* Ensure the existing hover styles remain */
+.section-nine form .download-btn .aryaBtn:hover {
+    background-color: var(--main-text);     /* White background on hover */
+    color: var(--section-background);      /* Dark text on hover */
+    border-color: var(--main-text); /* Optional: Match border to background on hover */
+}
+
+/* Ensure icon colors swap correctly */
+.section-nine form .download-btn .aryaBtn img {
+    filter: var(--icons-filter); /* White icon by default */
+}
+.section-nine form .download-btn .aryaBtn:hover img {
+    filter: var(--icons-hover); /* Dark icon on hover */
+}
