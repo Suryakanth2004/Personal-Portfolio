@@ -1,7 +1,5 @@
 /*------------------------------------------------------------------
-  Project: Resume
-  Author: The_Krishna
-  Last change: 13/12/2024
+  Project: Portfolio
   Primary use:
 ------------------------------------------------------------------ */
 /*-----------------------[Table of contents]------------------------
@@ -875,7 +873,7 @@ header {
 .tab-btn-main {
     display: flex;
     align-items: center;
-    gap: 15px; /* Keep the space between buttons */
+    gap: 15px; /* Space between buttons */
     margin: 20px 0 40px;
 }
 
@@ -890,23 +888,29 @@ header {
     color: var(--sub-text);
 } */
 
-
 .tab-btn {
     /* Base style for ALL tabs */
     border-radius: 20px;
-    border: 2px solid var(--btn-border); /* Use the solid theme border */
-    color: var(--main-text); /* Use main theme text color */
-    background-color: transparent; /* No background by default */
-    padding: 12px 24px; /* Keep consistent padding */
+    /* Explicitly set border style, width, and color */
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--btn-border); /* Use the theme variable for color */
+    color: var(--main-text); /* Text color for inactive tabs */
+    background-color: transparent; /* No background when inactive */
+    padding: 12px 24px;
     font-size: 18px;
     font-weight: 700;
     line-height: 24px;
     transition: all 0.3s ease-in-out;
-    cursor: pointer; /* Add pointer cursor */
+    cursor: pointer;
 }
 
-
-
+.web-dev{
+     border-radius: 20px;
+    /* Explicitly set border style, width, and color */
+    border-style: solid;
+    border-width: 2px;
+}
 .tabContainer {
     overflow: hidden;
     position: relative;
@@ -935,16 +939,17 @@ header {
 
 /* Style for the ACTIVE tab */
 .tab-btn.tab-active {
-    background-color: var(--main-text); /* Fill background when active */
-    color: var(--section-background); /* Use section background color for text */
+    background-color: var(--main-text); /* White background when active */
+    color: var(--section-background); /* Dark text when active */
+    border-color: var(--main-text); /* Border matches background when active */
 }
 
 /* Hover style for ANY tab */
 .tab-btn:hover {
-    background-color: var(--main-text); /* Fill background on hover */
-    color: var(--section-background); /* Use section background color for text */
-    /* Ensure hover doesn't revert active tab styles if needed */
-    border-radius: 20px;
+    background-color: var(--main-text); /* White background on hover */
+    color: var(--section-background); /* Dark text on hover */
+    border-radius: 20px; /* Keep rounded corners on hover */
+    border-color: var(--main-text); /* Border matches background on hover */
 }
 
 
@@ -2405,3 +2410,19 @@ body:not(.dark-mode) .moon-icon {
 .section-nine form .download-btn .aryaBtn:hover img {
     filter: var(--icons-hover); /* Dark icon on hover */
 }
+/* --- Modal Details Layout on Mobile --- */
+@media (max-width: 575.98px) { /* Targets extra small screens (phones) */
+  .modal-body .corporate_main {
+    grid-template-columns: 1fr; /* Switch to a single column */
+    gap: 0.75rem; /* Adjust vertical gap between items */
+    text-align: center; /* Center-align the text in the single column */
+    margin: 20px 0; /* Adjust vertical margins if needed */
+  }
+
+  .modal-body .cuberto_main {
+     justify-content: center; /* Center the label and value within each row */
+  }
+}
+
+/* --- Uniform Project Tab Button Styling --- */
+
