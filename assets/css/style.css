@@ -905,12 +905,7 @@ header {
     cursor: pointer;
 }
 
-.web-dev{
-     border-radius: 20px;
-    /* Explicitly set border style, width, and color */
-    border-style: solid;
-    border-width: 2px;
-}
+
 .tabContainer {
     overflow: hidden;
     position: relative;
